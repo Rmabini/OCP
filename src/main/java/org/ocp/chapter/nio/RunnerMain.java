@@ -34,7 +34,36 @@ public class RunnerMain {
 		//exercise18();
 		//exercise19();
 		//exercise20();
-		exercise21();
+		//exercise21();
+		//exercise22();
+		//exercise23();
+		
+	}
+	
+	private static void exercise23(){
+		Path path = Paths.get("test/test.sql");
+		Path path2 = Paths.get("test3/test.sql");
+
+		try {
+			Files.copy(path, path2);
+			System.out.println(path2);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private static void exercise22(){
+		Path path = Paths.get("test");
+		Path path2 = Paths.get("test3");
+		
+		try {
+			Files.copy(path, path2);
+			System.out.println(path2);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	/*
@@ -71,7 +100,11 @@ public class RunnerMain {
 		}
 	}
 	
-	
+	/*
+	    Files.isSameFile(path,path)
+	    return a boolean if both file is logical and physically same location
+	    can be used in symbolic link comparison
+	*/
 	private static void exercise19(){
 		Path path = Paths.get("/folder");
 		Path path2 = Paths.get(".");
