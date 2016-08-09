@@ -1,7 +1,11 @@
 package org.ocp.chapter.nio;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.FileSystem;
@@ -37,7 +41,22 @@ public class RunnerMain {
 		//exercise21();
 		//exercise22();
 		//exercise23();
+		exercise24();
 		
+	}
+	
+	private static void exercise24(){
+		try(InputStream in = new FileInputStream("test/test.sql");
+			OutputStream out = new FileOutputStream("test1/test.sql")	
+				){
+			Files.copy(in, Paths.get("test2/folder/test.sql"));
+			Files.copy(Paths.get("test", "test.sql"), out);
+			
+		                                                        	
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	private static void exercise23(){
